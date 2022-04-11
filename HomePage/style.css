@@ -19,6 +19,7 @@ div.content div.header h1 {
 }
 div.content div.header p {
   font-size: larger;
+  font-family: "Times New Roman", Times, serif;
 }
 div.content div.input-form {
   width: 60vh;
@@ -43,15 +44,31 @@ div.content form input {
 div.content div.input-form div.button-form {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row-reverse;
+
   align-content: flex-end;
   justify-content: space-between;
 }
-div.content div.input-form div.button-form input {
+div.content div.input-form div.button-form input,
+a {
   width: 13vh;
   height: 5vh;
   background-color: #6e6e6e;
   border-radius: 10px;
+  border: 1px solid black;
   font-family: cursive;
   margin-left: 1vh;
+  margin-right: 1vh;
+}
+div.content div.input-form div.button-form a {
+  text-decoration: none;
+  color: black;
+  font-size: smaller;
+  font-family: cursive;
+  line-height: 5vh;
+  border-radius: 10px;
+  background-color: #6e6e6e;
+  width: 13vh;
+  height: 5vh;
+  border: 1px solid black;
+  cursor: default;
 }
