@@ -24,15 +24,24 @@ const user = {
       return false;
     }
     this.data = JSON.parse(this.data);
-    if (password === this.data.password) {
+
+    if (
+      validator.rules.match(
+        password,
+        this.data.password,
+        "Password is not corect"
+      )
+    ) {
       cookie.setItem("session", this.storageKey);
       return true;
     }
+
     this.data = {};
     this.storageKey = null;
     cookie.removeItem("session");
     return false;
   },
+
   register: function (email, password) {
     user.storageKey = md5(email);
 

@@ -1,7 +1,7 @@
 div.modal {
   display: none;
   position: fixed;
-  background: #87878791;
+  background: #878787c7;
   top: 0;
   bottom: 0;
   left: 0;
@@ -17,11 +17,11 @@ div.modal div.body ul {
   color: bisque;
 }
 div.modal div.modal-content {
-  background: #00000040;
+  background: #0000007d;
   border: 2px solid black;
   margin: 0 auto;
-  margin-top: 10vh;
-  width: 50%;
+  margin-top: 25vh;
+  width: 30%;
 }
 
 div.modal div.modal-content.large {

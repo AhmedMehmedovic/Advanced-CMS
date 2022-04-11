@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="./../global/cookies.js"></script>
+    <script src="./../global/md5.js"></script>
+    <script src="./../global/modal.js"></script>
+    <script src="./../global/validator.js"></script>
+    <link rel="stylesheet" href="./../HomePage/style.css" />
+
+    <link rel="stylesheet" href="./../global/modal.css" />
+
+    <script src="./../global/user.js"></script>
+    <script src="./../login/login.js"></script>
+    <script src="./HomePage/register.js"></script>
+  </head>
+  <style></style>
+  <body>
+    <div class="content">
+      <div class="header">
+        <h1>WRITE YOURE NOTES</h1>
+        <p>Please register for free or sign up</p>
+      </div>
+      <div class="input-form">
+        <form action="post">
+          <input placeholder="Email" type="email" name="email" id="email" />
+          <input placeholder="Password" type="password" id="password" />
+        </form>
+        <div class="button-form">
+          <input type="submit" value="Registration" id="registerButton" />
+          <p>or</p>
+
+          <input value="Sign in" type="submit" id="signButton" />
+        </div>
+      </div>
+    </div>
+
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <div class="header">
+          <span class="title">ERORRS</span> <button class="close">X</button>
+        </div>
+        <div class="body">
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     inputs: {
       email: document.getElementById("email"),
       password: document.getElementById("password"),
-      submit: document.getElementById("submitButton"),
+      submit: document.getElementById("registerButton"),
     },
     registerModals: function () {
       this.modalErrors = modal(document.getElementById("modal1"));
@@ -13,6 +13,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
       this.inputs.submit.addEventListener("click", function (e) {
         e.preventDefault();
 
+        if (
+          registerPage.inputs.email.value == "" &&
+          registerPage.inputs.password.value == " "
+        ) {
+          registerPage.modalErrors.body(user.getErrors("Input is required"));
+          registerPage.modalErrors.show();
+        }
         if (
           user.register(
             registerPage.inputs.email.value,
