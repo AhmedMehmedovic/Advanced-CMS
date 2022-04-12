@@ -60,3 +60,11 @@ div.container div.body .button {
   background: #6e6e6e;
   width: 30%;
 }
+div.container div.footer {
+  display: flex;
+  height: 5%;
+  justify-content: space-around;
+}
+div.container div.footer a {
+  color: black;
+}

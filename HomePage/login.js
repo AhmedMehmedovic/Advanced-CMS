@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function (e) {
+  if (user.isLoggedIn()) {
+    location.href = user.redirectUrl;
+  }
+
   const loginPage = {
     inputs: {
       email: document.querySelector('.input-form input[type="email"]'),
@@ -16,18 +20,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
         e.preventDefault();
         let email = loginPage.inputs.email.value;
         let password = loginPage.inputs.password.value;
-        validator.rules.email(email);
-        validator.rules.password(password);
+        validator.inputs.email(email);
+        validator.inputs.password(password);
         if (validator.fail()) {
           self.modalErrors.body(validator.getErrors());
+          self.modalErrors.show();
+          return false;
         }
 
         if (!user.init(email, password)) {
           self.modalErrors.body(user.getErrors());
         }
-        if (user.register(email, password)) {
-          self.modalErrors.body(user.getErrors());
-        }
+
         self.modalErrors.show();
       });
     },

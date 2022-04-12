@@ -4,8 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./../Registration/style.css" />
+
     <title>Registration Page</title>
+    <script src="./../global/cookies.js"></script>
+    <script src="./../global/md5.js"></script>
+    <script src="./../global/modal.js"></script>
+    <script src="./../global/validator.js"></script>
+    <link rel="stylesheet" href="./../Registration/style.css" />
+    <link rel="stylesheet" href="./../global/modal.css" />
+    <script src="./../global/user.js"></script>
+
+    <script src="./../Registration/index.js"></script>
   </head>
   <body>
     <div class="container">
@@ -19,26 +28,53 @@
             <input type="email" name="email" placeholder="Email" required />
           </div>
           <div>
-            <input type="password" placeholder="Password" required />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
           </div>
           <div>
-            <input type="password" placeholder="Re-type Password" required />
+            <input
+              type="password"
+              name="Re-type Password"
+              placeholder="Re-type Password"
+              required
+            />
           </div>
 
           <div>
-            <input type="text" placeholder="First Name" />
+            <input type="text" name="First Name" placeholder="First Name" />
           </div>
 
           <div>
-            <input type="text" name="name" placeholder="Last Name" />
+            <input type="text" name="Last Name" placeholder="Last Name" />
           </div>
 
           <div class="divButton">
-            <input class="button" type="submit" value="Register" />
+            <input
+              id="register"
+              class="button"
+              type="submit"
+              value="Register"
+            />
           </div>
         </form>
       </div>
-      <div class="footer"></div>
+      <div class="footer">
+        <a href="./../HomePage/index.html"> Return to HomePage</a>
+      </div>
+    </div>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <div class="header">
+          <span class="title">ERORRS</span> <button class="close">X</button>
+        </div>
+        <div class="body">
+          <ul></ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>

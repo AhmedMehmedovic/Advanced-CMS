@@ -4,40 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HomePage</title>
 
+    <title>Registration Page</title>
     <script src="./../global/cookies.js"></script>
     <script src="./../global/md5.js"></script>
     <script src="./../global/modal.js"></script>
     <script src="./../global/validator.js"></script>
-    <link rel="stylesheet" href="./../HomePage/style.css" />
 
     <link rel="stylesheet" href="./../global/modal.css" />
-    <script src="./../HomePage/login.js"></script>
     <script src="./../global/user.js"></script>
+    <script src="./../global/table.js"></script>
   </head>
-  <style></style>
   <body>
-    <div class="content">
-      <div class="header">
-        <h1>WRITE YOURE NOTES</h1>
-        <p>Please register for free or SIGN IN</p>
-      </div>
-      <div class="input-form">
-        <form action="post">
-          <input placeholder="Email" type="email" name="email" id="email" />
-          <input placeholder="Password" type="password" id="password" />
-        </form>
-        <div class="button-form">
-          <a href="../Registration/index.html">Registration</a>
-
-          <p>or</p>
-
-          <input value="Sign in" type="submit" id="signButton" />
-        </div>
-      </div>
+    <div class="container">
+      <style>
+        table {
+          border: 1px solid black;
+        }
+      </style>
+      <table id="test1"></table>
+      <script>
+        let tableTest1 = table(document.getElementById("test1"), {
+          columns: ["biljeska", "datum"],
+          search: true,
+          pagination: true,
+          paginationMenu: [10, 20, 30],
+        });
+      </script>
     </div>
-
     <div id="modal1" class="modal">
       <div class="modal-content">
         <div class="header">

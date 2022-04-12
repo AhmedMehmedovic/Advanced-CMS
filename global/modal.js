@@ -31,7 +31,9 @@ const modal = function (element) {
 
   return {
     show: function () {
-      element.classList.add("show");
+      if (element.querySelectorAll(".body ul li").length > 0) {
+        element.classList.add("show");
+      }
     },
     close: _close,
 

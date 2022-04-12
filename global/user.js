@@ -1,4 +1,5 @@
 const user = {
+  redirectUrl: "/biljeske/index.html",
   storageKey: null,
   data: {},
   errors: [],
@@ -20,7 +21,7 @@ const user = {
     this.storageKey = md5(key);
     this.data = localStorage.getItem(this.storageKey);
     if (this.data == null) {
-      this.errors.push("Korisnik nije registrovan");
+      this.errors.push("User is not register");
       return false;
     }
     this.data = JSON.parse(this.data);
@@ -42,17 +43,27 @@ const user = {
     return false;
   },
 
-  register: function (email, password) {
+  register: function (email, password, firstName, lastName) {
+    if (typeof user.data === "object") {
+      user.data = {};
+    }
+
+    if (email == null) {
+      return false;
+    }
     user.storageKey = md5(email);
 
     if (localStorage.getItem(user.storageKey) !== null) {
-      this.errors.push("Email je zauzet!");
+      this.errors.push("This email is used");
       user.storageKey = null;
       return false;
     }
 
     user.data.email = email;
     user.data.password = password;
+
+    user.data.firstName = firstName;
+    user.data.lastName = lastName;
 
     this.save();
     return true;

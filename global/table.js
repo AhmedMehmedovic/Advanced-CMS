@@ -19,9 +19,19 @@ const table = function (
 
   return {
     show: function () {},
-    createRow: function () {},
+    createRow: function (element) {
+      let table = element
+
+    let rowCount = table.rows.length
+    let row = table.insertRow(rowCount)
+
+    row.insertCell(0).innerHTML = 
+
+
+    },
     createColumn: function () {},
     edit: function () {},
     delete: function () {},
+    close: function() {}
   };
 };
